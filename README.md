@@ -6,6 +6,12 @@ Turns your NIKKE PC launcher logs into a **privacy-safe evidence package** for t
 - **Offline.** Nothing is uploaded. You decide where the folder goes.
 - **No install.** Uses the PowerShell that comes with Windows.
 
+## 📸 New here? Follow the [photo tutorial](docs/TUTORIAL.md)
+
+[![Step by step with pictures](docs/img/05-side-by-side-summary.png)](docs/TUTORIAL.md)
+
+Download → double-click → read the check page → send the 4 files. [Open the photo tutorial →](docs/TUTORIAL.md)
+
 ## How to use (no typing needed)
 
 1. Download both files into the same folder: `Check-My-NIKKE-Logs.bat` and `Redact-NikkeLogs.ps1`.
