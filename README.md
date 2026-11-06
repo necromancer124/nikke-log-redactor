@@ -63,3 +63,8 @@ Advanced: `powershell -ExecutionPolicy Bypass -File .\Redact-NikkeLogs.ps1 -Path
 - **Keep your original logs** (and an offline copy, like a USB stick) until this is over. The package proves *which* file it came from, but the police may want the original.
 - **Never send** passwords, seed phrases or ID documents to anyone, including us.
 - This tool does **not** clean your PC. Use the official check guide for that: https://x.com/NIKKE_en/status/2118118928631451774
+
+## License
+
+MIT. See [LICENSE](LICENSE). Free to use, share and modify.
+
