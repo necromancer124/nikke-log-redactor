@@ -18,7 +18,7 @@ Turns your NIKKE PC launcher logs into a **privacy-safe evidence package** for t
 3. Watch k2f-chan dance while it works. 💃
 4. Your browser opens a **side-by-side check**: your original log on the left, what you'll share on the right, with every removed value highlighted.
    This page is private and is **not** in the share folder.
-5. A folder named `NIKKE-evidence-<date>` appears on your Desktop and **opens automatically**. That's the folder you share.
+5. A folder named `NIKKE-evidence-<date>` appears on your Desktop. It opens first, then the side-by-side page opens on top of it with 3 steps: read the page, switch to the folder (Alt+Tab), send the 4 files. That folder is what you share.
    The terminal, the side-by-side page and `WHAT-TO-SEND.txt` all list exactly which files to send and which to keep.
    If a file couldn't be read, you get a warning instead of a false "clean".
 

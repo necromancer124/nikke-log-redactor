@@ -375,11 +375,20 @@ mark.new{background:#d4ecd9;color:#1d5a2c;padding:0 2px;border-radius:3px}
 .ok,.no{font-weight:700;margin-right:6px}
 .unread{color:#8a4b00;background:#fff3dc;border:1px solid #e0a43a;padding:10px 14px;border-radius:8px}
 .unreadbox{background:#fff3dc;border:1px solid #e0a43a}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 16px}
+.step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid #e1d8c6;border-radius:10px;padding:14px 16px;font-size:15px}
+.step .n{flex:none;width:30px;height:30px;border-radius:50%;background:#111314;color:#ebd3a2;display:flex;align-items:center;justify-content:center;font-weight:700}
+kbd{font:600 12px Consolas,monospace;background:#f1ece2;border:1px solid #cfc4ad;border-radius:4px;padding:1px 5px}
 </style></head><body>
 <header><h1>Your NIKKE log check</h1><p>Left: your original log. Right: the version in your evidence folder. This page is private and is NOT in the folder you share.</p></header>
 <main>
 $verdict
 $unreadNote
+<div class="steps">
+ <div class="step"><span class="n">1</span><div><b>Read this page.</b> Check the right-hand column: that's everything that will be shared.</div></div>
+ <div class="step"><span class="n">2</span><div><b>Your evidence folder is already open</b> in a File Explorer window behind this page. Switch to it with <kbd>Alt</kbd>+<kbd>Tab</kbd> (or click it on the taskbar).</div></div>
+ <div class="step"><span class="n">3</span><div><b>Send the 4 files</b> from that folder through the official community channel. Keep everything in the red box private.</div></div>
+</div>
 $sendPanel
 <div class="box">
  <div class="card"><h3>Removed or hashed</h3><ul>$removedList</ul></div>
@@ -411,7 +420,8 @@ Write-Host '    [X]  Passwords, seed phrases or ID documents' -ForegroundColor R
 Write-Host ''
 Write-Host '  Your original logs were NOT changed. Keep them and a USB copy until this is over.'
 if (-not $NoOpen) {
-  try { Start-Process -FilePath 'explorer.exe' -ArgumentList "`"$outDir`"" } catch { }   # the folder to send
-  try { Start-Process $cmpPath } catch { }                                              # the private side-by-side check
+  # Folder first, then (after it has appeared) the page, so the page lands on top and the folder waits behind it.
+  try { Start-Process -FilePath 'explorer.exe' -ArgumentList "`"$outDir`""; Start-Sleep -Milliseconds 1500 } catch { }
+  try { Start-Process $cmpPath } catch { }
   Write-Host '  Opened: your evidence folder (to send) and the side-by-side page (private).'
 }
