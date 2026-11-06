@@ -1,0 +1,11 @@
+# run output (may contain real evidence)
+test-output/
+NIKKE-evidence-*/
+NIKKE-compare-*.html
+
+# local screenshots (show local paths)
+*.png
+
+# generated / ad-hoc test data (regenerate with fake-test-logs/New-FakeLauncherLogs.ps1)
+fake-test-logs/realistic/
+fake-test-logs/unreadable/
